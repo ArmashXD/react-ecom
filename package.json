@@ -11,13 +11,9 @@
     "lint:fix": "eslint --fix",
     "pretty": "prettier src --check",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "postinstall": "husky install",
     "prepare": "husky install"
   },
   "dependencies": {
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-react": "^7.31.8",
-    "eslint-plugin-react-hooks": "^4.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.0"
@@ -26,6 +22,9 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -33,5 +32,11 @@
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "vite": "^3.1.0"
+  },
+  "lint": "node_modules/.bin/eslint .",
+  "lint:fix": "node_modules/.bin/eslint --fix",
+  "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+  "lint-staged": {
+    "*.js": "node_modules/.bin/eslint --fix"
   }
 }
